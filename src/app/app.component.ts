@@ -9,6 +9,7 @@ import {TasksArray} from './tasks';
 export class AppComponent implements OnInit {
   title = 'Visit google.com';
   taskList;
+  showTextBox:boolean = false;
 
   logThis() 
   {

@@ -4,13 +4,21 @@
 
 <div>
   <div class="header">
-    <button type="button">Delete</button> | <button type="button">Done</button> | <button>Add task</button>
+    <button type="button">Delete</button> | <button type="button">Done</button> | <button (click) ="showTextBox = true">Add task</button>
   </div>
 
 
   <h3>Tasks</h3>
   <hr>
   <br>
+  <div class="txt-box" *ngIf="showTextBox">
+    <form>
+      <input type="text" name="" value=""> <button>save</button> | <button (click) ="showTextBox = false">cancel</button>
+    </form>
+    <hr>
+    <br>
+  </div>
+
 
   <div class="tasks">
     <div class="task-block" id="undone" *ngFor="let item of taskList">
