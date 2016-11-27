@@ -1,4 +1,4 @@
-interface Tasks {
+export interface Tasks {
     id:number;
     name:string;
 }
