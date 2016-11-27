@@ -1,0 +1,12 @@
+.header{
+    margin-bottom: 5em;
+    margin-left: 30em;
+}
+
+.task-block {
+    padding-top: 1em;
+    height: 2em;
+    border: 1px solid lawngreen;
+    width: 15em;
+    margin-bottom: 1em;
+}

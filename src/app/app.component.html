@@ -1,3 +1,21 @@
-<h1>
+<!--<h1>
   {{title}}
-</h1>
+</h1>-->
+
+<div>
+  <div class="header">
+    <button type="button">Delete</button> | <button type="button">Done</button> | <button>Add task</button>
+  </div>
+
+
+  <h3>Tasks</h3>
+  <hr>
+  <br>
+
+  <div class="tasks">
+    <div class="task-block" id="undone" *ngFor="let item of taskList">
+      <label for=""><input type="checkbox" name="" >|{{item.name}} </label>
+    </div>
+    
+  </div>
+</div>
