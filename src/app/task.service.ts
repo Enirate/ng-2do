@@ -8,9 +8,9 @@ export class TaskService {
     return Promise.resolve(TasksArray);
   }
 
-  // addANewtask(newTask) {
-  //   TasksArray.push(newTask);
-  // }
+  addANewtask(newTask) {
+    TasksArray.push(newTask);
+  }
 
   constructor() { }
 

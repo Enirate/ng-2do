@@ -38,7 +38,13 @@ export class AppComponent implements OnInit
   onSubmit(value) {
     let arrayLen = TasksArray.length + 1;
     value.id =arrayLen;
-    TasksArray.push(value);
+
+    //push something up through service.
+    this.taskService.addANewtask(value);
+    //TasksArray.push(value);
+
+    //hide form
+    this.showTextBox = false;
     console.log(value);
   }
 
