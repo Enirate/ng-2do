@@ -36,6 +36,9 @@ export class AppComponent implements OnInit
   }
 
   onSubmit(value) {
+    let arrayLen = TasksArray.length + 1;
+    value.id =arrayLen;
+    TasksArray.push(value);
     console.log(value);
   }
 
