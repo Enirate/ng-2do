@@ -12,9 +12,10 @@
   <hr>
   <br>
   <div class="txt-box" *ngIf="showTextBox">
-    <form>
-      <input type="text" name="" value=""> <button>save</button> | <button (click) ="showTextBox = false">cancel</button>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" >
+      <input type="text" ngModel name="name" value=""> <button type="submit">save</button> | <button (click) ="showTextBox = false">cancel</button>
     </form>
+     {{f.value | json}}
     <hr>
     <br>
   </div>

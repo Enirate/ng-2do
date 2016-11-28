@@ -35,6 +35,12 @@ export class AppComponent implements OnInit
     this.taskService.getAllTask().then(ourTasks=>this.taskList = ourTasks);
   }
 
+  onSubmit(value) {
+    console.log(value);
+  }
+
+
+
 }
 
 //Add 
