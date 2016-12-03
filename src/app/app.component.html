@@ -4,7 +4,7 @@
 
 <div>
   <div class="header">
-    <button type="button">Delete</button> | <button type="button">Done</button> | <button (click) ="showTextBox = true">Add task</button>
+    <button type="button" (click)="deleteRecipients()">Delete</button> | <button type="button" (click)="doneTasks()">Done</button> | <button (click) ="showTextBox = true">Add task</button>
   </div>
 
 
@@ -22,9 +22,14 @@
 
 
   <div class="tasks">
-    <div class="task-block" id="undone" *ngFor="let item of taskList">
-      <label for=""><input type="checkbox" name="" >|{{item.name}} </label>
-    </div>
-    
+      <div class="task-block" id="undone" *ngFor="let item of taskList" [class.done] ="isDone(item)">
+      <label for=""><input type="checkbox" name="" (change)="checkbox(item)">|{{item.name}} |{{item.taken}} </label>
+  </div>
+
+  <!--<div class="tasks">
+      <div class="task-block done" id="undone" >
+      <label for=""><input type="checkbox" name="" >|do this </label>
+  </div>-->
+    {{taskList|json}}
   </div>
 </div>
