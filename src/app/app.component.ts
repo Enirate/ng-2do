@@ -63,8 +63,21 @@ export class AppComponent implements OnInit
     deleteRecipients() {  //need to know which recipients are checked
         // we declare a new variable using let(typescript syntax)
         //and we filter our task array based on the taken value of object element.
-        this.selected = this.taskList.filter((x) => x.taken)
-        console.log(this.selected);
+        //this.selected = this.taskList.filter((x) => x.taken)
+        //console.log(this.selected);
+
+        //simple for and while loop cannot be used in this situation as each iteration 
+        let l = this.taskList.length; //
+
+         while(l --){
+           if(this.taskList[l].taken === true) {
+             this.taskList.splice(l, 1);
+           }
+         }
+       
+        
+
+        
     }
 
     //a class that will change the style of checked tasks when mark as done,
@@ -74,11 +87,12 @@ export class AppComponent implements OnInit
           //recipient.done = (recipient.done)? false : true;
          let wobo = this.taskList.map(function(x){return x.taken});
          //loop through array and check if x.taken is through if it is true add a property is done, check
-         let taskListLen = this.taskList.length;
+         
          //To get the correct number of index in an array subtract one from its length. index start from 0.
-         taskListLen -=1;
+         let taskListLen = this.taskList.length;
+         let taskElements = taskListLen -=1;
          let i = 0;
-         while(i <= taskListLen) {
+         while(i <= taskElements) {
            if(this.taskList[i].taken === true) {
              this.taskList[i].done = true;
            }else {
